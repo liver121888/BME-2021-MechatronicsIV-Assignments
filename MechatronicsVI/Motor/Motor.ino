@@ -34,17 +34,17 @@ void loop()
     switch(serialread)
     {
       case 'w':
-      analogWrite(Motorforward_A, 130);
+      analogWrite(Motorforward_A, 200);
       analogWrite(Motorbackward_A, 0);
-      analogWrite(Motorforward_B, 130);
+      analogWrite(Motorforward_B, 230);
       analogWrite(Motorbackward_B, 0);
       break;
       
       case 'x':
       analogWrite(Motorforward_A, 0);
-      analogWrite(Motorbackward_A, 130);
+      analogWrite(Motorbackward_A, 200);
       analogWrite(Motorforward_B, 0);
-      analogWrite(Motorbackward_B, 130);
+      analogWrite(Motorbackward_B, 230);
       break;
       
       case 's':
@@ -56,16 +56,16 @@ void loop()
       
       case 'a':
       analogWrite(Motorforward_A, 0);
-      analogWrite(Motorbackward_A, 130);
-      analogWrite(Motorforward_B, 130);
+      analogWrite(Motorbackward_A, 200);
+      analogWrite(Motorforward_B, 200);
       analogWrite(Motorbackward_B, 0);
       break;
       
       case 'd':
-      analogWrite(Motorforward_A, 130);
+      analogWrite(Motorforward_A, 200);
       analogWrite(Motorbackward_A, 0);
       analogWrite(Motorforward_B, 0);
-      analogWrite(Motorbackward_B,130);
+      analogWrite(Motorbackward_B,200);
       break;
             
       case 'o':
