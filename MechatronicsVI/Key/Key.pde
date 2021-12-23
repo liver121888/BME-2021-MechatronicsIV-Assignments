@@ -10,18 +10,12 @@ void setup() {
   ///dev/ttyACM0
   port = new Serial(this, Serial.list()[2], 9600);
   }
-}
+
 int now = 0;
 int interval = 100;
 void draw() {
     // keep draw() here to continue looping while waiting for keys
-    if (cam.available() == true) {
-    cam.read();
-  }
-  image(cam, 0, 0);
-  // The following does the same, and is faster when just drawing the image
-  // without any additional resizing, transformations, or tint.
-  //set(0, 0, cam);
+
   
   if ((millis() - now > interval) && inString != null) {
     now = millis();
@@ -50,10 +44,16 @@ void keyPressed()
     port.write("a");
   else if (key == 'd')
     port.write("d");
+  else if (key == 'q')
+    port.write("q");
+  else if (key == 'e')
+    port.write("e");
   else if (key == 'o')
     port.write("o");
   else if (key == 'l')
     port.write("l");
+  else if (key == '2')
+    port.write("2");
 }
 
 void serialEvent (Serial port) {

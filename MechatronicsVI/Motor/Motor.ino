@@ -1,11 +1,11 @@
 #include <Servo.h> 
 Servo myservo;  // 建立SERVO物件
-int Motorforward_B = 6;   
-int Motorbackward_B = 5; 
+int Motorforward_B = 3;   
+int Motorbackward_B = 11; 
 int en_B = 4;//right  
 int en_A = 8;//left
-int Motorforward_A = 11;   
-int Motorbackward_A = 3;
+int Motorforward_A = 5;   
+int Motorbackward_A = 6;
 
 void setup()
 
@@ -34,17 +34,24 @@ void loop()
     switch(serialread)
     {
       case 'w':
-      analogWrite(Motorforward_A, 200);
+      analogWrite(Motorforward_A, 170);
       analogWrite(Motorbackward_A, 0);
-      analogWrite(Motorforward_B, 230);
+      analogWrite(Motorforward_B, 140);
+      analogWrite(Motorbackward_B, 0);
+      break;
+      
+      case '2':
+      analogWrite(Motorforward_A, 220);
+      analogWrite(Motorbackward_A, 0);
+      analogWrite(Motorforward_B, 160);
       analogWrite(Motorbackward_B, 0);
       break;
       
       case 'x':
       analogWrite(Motorforward_A, 0);
-      analogWrite(Motorbackward_A, 200);
+      analogWrite(Motorbackward_A, 170);
       analogWrite(Motorforward_B, 0);
-      analogWrite(Motorbackward_B, 230);
+      analogWrite(Motorbackward_B, 140);
       break;
       
       case 's':
@@ -56,16 +63,30 @@ void loop()
       
       case 'a':
       analogWrite(Motorforward_A, 0);
-      analogWrite(Motorbackward_A, 200);
-      analogWrite(Motorforward_B, 200);
+      analogWrite(Motorbackward_A, 150);
+      analogWrite(Motorforward_B, 150);
+      analogWrite(Motorbackward_B, 0);
+      break;
+
+      case 'q':
+      analogWrite(Motorforward_A, 100);
+      analogWrite(Motorbackward_A, 0);
+      analogWrite(Motorforward_B, 255);
       analogWrite(Motorbackward_B, 0);
       break;
       
       case 'd':
-      analogWrite(Motorforward_A, 200);
+      analogWrite(Motorforward_A, 150);
       analogWrite(Motorbackward_A, 0);
       analogWrite(Motorforward_B, 0);
-      analogWrite(Motorbackward_B,200);
+      analogWrite(Motorbackward_B,150);
+      break;
+
+      case 'e':
+      analogWrite(Motorforward_A, 255);
+      analogWrite(Motorbackward_A, 0);
+      analogWrite(Motorforward_B, 100);
+      analogWrite(Motorbackward_B,0);
       break;
             
       case 'o':
